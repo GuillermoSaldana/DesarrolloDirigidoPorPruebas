@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DesarrolloDirigidoPorPruebas
 {
-    public class Class1
+    public class Metodos
     {
+
     }
 }
