@@ -158,7 +158,7 @@ namespace DesarrolloDirigidoPorPruebas.Tests
             Assert.IsFalse(metodo.comprobarContrasena2("Password1234"));
             Assert.IsFalse(metodo.comprobarContrasena2(""));
         }
-        /*
+
         [TestMethod()]
         public void comprobarURLTest()
         {
