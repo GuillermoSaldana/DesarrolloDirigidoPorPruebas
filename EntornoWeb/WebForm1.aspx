@@ -179,7 +179,9 @@
                     <td class="auto-style17">
                         <asp:Button ID="ButtonAceptar" runat="server" OnClick="ButtonAceptar_Click" Text="Aceptar" Width="225px" />
                     </td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Button ID="ButtonDelete" runat="server" OnClick="ButtonDelete_Click" Text="Borrar datos" Width="195px" />
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style6">&nbsp;</td>
