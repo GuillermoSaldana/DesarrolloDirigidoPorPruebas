@@ -18,6 +18,39 @@ namespace EntornoWeb
 
         protected void ButtonAceptar_Click(object sender, EventArgs e)
         {
+            if (m.comprobarCorreoElectronico(TextBoxCorreo.Text))
+            {
+                LblErrorCorreo.Text = "";
+                LabelCorreo.Text = "El correo tiene un formato correcto";
+            }
+            else
+            {
+                LabelCorreo.Text = "";
+                LblErrorCorreo.Text = "El correo no presenta un formato correcto";
+            }
+
+            if (m.comprobarNIF(TextBoxNIF.Text))
+            {
+                LblErrorNIF.Text = "";
+                LabelNIF.Text = "El NIF es correcto";
+            }
+            else
+            {
+                LabelNIF.Text = "";
+                LblErrorNIF.Text = "El NIF no es correcto";
+            }
+
+            if (m.comprobarCodigoPostal(TextBoxCP.Text))
+            {
+                LblErrorCP.Text = "";
+                LabelCP.Text = "El codigo postal es correcto";
+            }
+            else
+            {
+                LabelCP.Text = "";
+                LblErrorCP.Text = "El codigo postal no es correcto";
+            }
+
             if(m.comprobarContrasena2(TextBoxContrasena2.Text) == true)
             {
                 LblErrorContrasena.Text = "";
@@ -66,6 +99,11 @@ namespace EntornoWeb
                     "que la fecha no exista o que la fecha sea mayor que la actual";
             }
            
+        }
+
+        protected void ButtonDelete_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("WebForm1.aspx");
         }
     }
 }
