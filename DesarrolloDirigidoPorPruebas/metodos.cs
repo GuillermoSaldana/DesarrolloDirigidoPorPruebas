@@ -13,7 +13,7 @@ namespace DesarrolloDirigidoPorPruebas
     {        
         public Boolean comprobarCorreoElectronico(String correo)
         {
-            return Regex.IsMatch(correo, @"\A[a-zA-Z0-9\-_]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,3}\Z");
+            return Regex.IsMatch(correo, @"\A[a-zA-Z0-9\-_]+@[a-zA-Z0-9\-]+\.[a-zA-Z]{2,3}\Z");
         }
 
         public Boolean comprobarNIF(String NIF)
@@ -257,14 +257,15 @@ namespace DesarrolloDirigidoPorPruebas
                     contador++;
                 }
             }
+        https://ubuvirtual.ubu.es/course
 
-            if(contador == 2)
+            if (contador == 2)
             {
-                return Regex.IsMatch(url, @"^(http|https)\://[a-zA-Z0-9\-\.]+\.[a-zA-Z](:[a-zA-Z0-9]*)+\.(com|es|edu|gov|mil|net|org|biz|info|name|museum|us|ca|uk)/?([a-zA-Z0-9])");
+                return Regex.IsMatch(url, @"^(http|https)://[a-zA-Z0-9]+\.[a-zA-Z]+\.(com|es|edu|gov|mil|net|org|biz|info|name|museum|us|ca|uk)/?([a-zA-Z0-9]*)$");
             }
             else if(contador ==1)
             {
-                return Regex.IsMatch(url, @"^(http|https)\://([a-zA-Z]*)+\.(com|es|edu|gov|mil|net|org|biz|info|name|museum|us|ca|uk)/?([a-zA-Z0-9])");
+                return Regex.IsMatch(url, @"^(http|https)://[a-zA-Z]+\.(com|es|edu|gov|mil|net|org|biz|info|name|museum|us|ca|uk)/?([a-zA-Z0-9]*)$");
             }
             return false;
         }
