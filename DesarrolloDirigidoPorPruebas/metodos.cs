@@ -10,9 +10,7 @@ using System.Text.RegularExpressions;
 namespace DesarrolloDirigidoPorPruebas
 {
     public class Metodos
-    {
-        List<string> listaEspecial = new List<string>();
-        
+    {        
         public Boolean comprobarCorreoElectronico(String correo)
         {
             return Regex.IsMatch(correo, @"\A[a-zA-Z0-9\-_]+@[a-zA-Z0-9\-]+\.[a-zA-Z]{2,3}\Z");
@@ -224,13 +222,9 @@ namespace DesarrolloDirigidoPorPruebas
 
         public Boolean contieneCaracterEspecial(string contrasena)
         {
-            listaEspecial.Add("-");
-            listaEspecial.Add("_");
-            listaEspecial.Add("+");
-            listaEspecial.Add("*");
-            listaEspecial.Add("#");
+            List<char> listaEspecial = new List<char>() { '-', '_', '+', '*', '#' };
 
-            foreach (String a in listaEspecial)
+            foreach(char a in listaEspecial)
             {
                 if (contrasena.Contains(a))
                 {
