@@ -24,20 +24,12 @@ namespace DesarrolloDirigidoPorPruebas
             Boolean sol1 = Regex.IsMatch(NIF, @"\A[0-9]{8}[A-Z]{1}\Z");
             Boolean sol2 = Regex.IsMatch(NIF, @"\A[KLMXYZ]{1}[0-9]{7}[A-Z]{1}\Z");
             if(sol1 == true){
-                int total = 0;
-                for (int i = 0; i < 8; i++)
-                {
-                    total += Convert.ToInt32(Char.GetNumericValue(NIF[i]));
-                }
+                int total = Convert.ToInt32(NIF.Substring(0,8));
                 int numControl = total % 23;
                 return control[numControl] == NIF[8];
             }else if(sol2 == true)
             {
-                int total = 0;
-                for (int i = 1; i < 8; i++)
-                {
-                    total += Convert.ToInt32(Char.GetNumericValue(NIF[i]));
-                }
+                int total = Convert.ToInt32(NIF.Substring(1, 7));
                 int numControl = total % 23;
                 return control[numControl] == NIF[8];
             }
@@ -51,12 +43,8 @@ namespace DesarrolloDirigidoPorPruebas
         {
             List<char> control = new List<char>() { 'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'I', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E' };
             Boolean sol = Regex.IsMatch(NIE, @"\A[MXYZ]{1}[0-9]{7}[A-Z]{1}\Z");
-            int total = 0;
             if(sol == true){
-                for (int i = 1; i < 8; i++)
-                {
-                    total += Convert.ToInt32(Char.GetNumericValue(NIE[i]));
-                }
+                int total = Convert.ToInt32(NIE.Substring(1, 7));
                 int numControl = total % 23;
                 return control[numControl] == NIE[8];
             }
@@ -263,8 +251,6 @@ namespace DesarrolloDirigidoPorPruebas
                     contador++;
                 }
             }
-        https://ubuvirtual.ubu.es/course
-
             if (contador == 2)
             {
                 return Regex.IsMatch(url, @"^(http|https)://[a-zA-Z0-9]+\.[a-zA-Z]+\.(com|es|edu|gov|mil|net|org|biz|info|name|museum|us|ca|uk)/?([a-zA-Z0-9]*)$");
